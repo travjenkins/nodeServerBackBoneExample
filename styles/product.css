@@ -1,0 +1,17 @@
+body {
+    background:#eee;
+}
+
+.itemDetails, #productDetailsDisplay {
+    border:1px solid #000;
+    cursor: pointer;
+    margin: 1em;
+}
+
+.itemDetails:hover {
+    background:#ccc;
+}
+
+#productDetailsDisplay {
+    background:#f00;
+}

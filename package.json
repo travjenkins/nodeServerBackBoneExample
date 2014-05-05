@@ -1,0 +1,12 @@
+{
+  "name": "clientSidePOC",
+  "description": "Little test server that returns JSON to show clientside rendering",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "consolidate": "0.x",
+    "mustache": “0.x”,
+    “html”: “1.x”
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Product Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../product.css">
+    </head>
+    <body>
+        <div>Product details. Click one of the item types to see the details.</div>
+        
+        <div class="outfitDetails">
+            <div class="itemDetails" data-detailsURL="/product/1">
+                <strong>This is a shirt</strong>
+            </div>
+            
+            <div class="itemDetails" data-detailsURL="/product/2">
+                <strong>This is a pair of pants</strong>
+            </div>
+            
+            <div class="itemDetails" data-detailsURL="/product/3">
+                <strong>These are shoes</strong>
+            </div>
+        </div>
+        
+        <script type="text/template" id="detailedView">
+            <div id="productDetailsDisplay">
+                Color: <span class="color"></span>
+                <p>
+                    {{#colors}}
+                        <a href="{{swatch}}">{{name}}</a>
+                    {{/colors}}
+                </p>
+
+                Size: <span class="size"></span>
+                <p>
+                    {{#sizes}}
+                        <a href="#{{name}}" {{^isInStock}}class="outOfStock"{{/isInStock}}>{{abbr}}</a>
+                    {{/sizes}}
+                </p>
+
+                <p>
+                    <strong>Also available in:</strong>
+                    <ul>
+                        {{#variants}}
+                        <li>
+                            <a href="{{url}}">
+                                {{name}}
+                            </a>
+                        </li>
+                        {{/variants}}
+                    </ul>
+                </p>
+            </div>
+        </script>
+        
+        <script type="text/template" id="basicView">
+            <strong>This is a {{name}}</strong>
+            {{#details}}
+                <ul>
+                    <li>Color: <strong class="color">{{color}}</strong></li>
+                    <li>Size: <strong class="size">{{size}}</strong></li>
+                    <li>Quantity <strong class="quantity">{{quantity}}</strong></li>
+                </ul>
+            {{/details}}
+        </script>
+        
+        <script src="../libs/jquery/jquery.js" type="text/javascript"></script>
+        <script src="../libs/mustache.js/mustache.js" type="text/javascript"></script>
+        <script src="../libs/underscore.js/underscore.js" type="text/javascript"></script>
+        <script src="../libs/backbone.js/backbone.js" type="text/javascript"></script>
+        <script src="../src/product.js" type="text/javascript"></script>
+    </body>
+</html>
